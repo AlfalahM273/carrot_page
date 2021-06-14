@@ -1,0 +1,246 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mitrais Carrot</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./assets/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <style>
+        .btn-action-carrot {
+            margin: 2px;
+            width: 38px;
+        }
+        .error {
+            color: red;
+        }
+        /* for datatable processing message */
+        .dataTables_wrapper .dataTables_processing {
+            color: #777;
+            width: 300px !important;
+            font-size: 1.2em;
+            background: white;
+            border: 1px solid #dee2e6;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        .wrap_carrot {
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
+        }
+        .help_icon {
+            font-size: 25px;
+            color: #888;
+        }
+        div.polaroid {
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+            border: 10px solid white;
+        }
+        div.polaroid > div.container {
+            text-align: center;
+            padding: 20px 20px 10px 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <a class="navbar-brand" href="https://carrot.mitrais.com/carrot/">
+                <img src="https://carrot.mitrais.com/carrot/assets/img/mitrais-logo.png" alt="">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Notification">
+                            <i class="fa fa-bell notif-icon"></i>
+                            <div id="notif" class=""></div>
+                        </a>
+                        <div id="notif-content" class="dropdown-menu right-0" aria-labelledby="navbarDropdown">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Notification">
+                            <i class="fa fa-question-circle help_icon"></i>
+                            <div id="notif" class=""></div>
+                        </a>
+                        <div id="notif-content" class="dropdown-menu right-0" aria-labelledby="navbarDropdown">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Menu">
+                            <i class="fa fa-bars" style="font-size:25px"></i>
+                        </a>
+                        <div class="dropdown-menu right-0" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">
+                                <strong>Muhammad Alfalah Madukubah</strong>
+                                <small class="text-sm">SE-JP, Training & Development</small>
+                                <small class="text-danger">Staff</small>
+                            </a>
+                            <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#modalCredit"><i class="fa fa-trophy"></i> Credits</a>
+                            <a class="dropdown-item" href="#"><input type="checkbox" id="notif-setting" checked> Email Notification</a>
+                            <a class="dropdown-item" href="https://carrot.mitrais.com/carrot/login/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- main section -->
+    <main role="main" class="container">
+        <section class="admin-tabs py-3">
+            <div class="container bg-white">
+                <div class="row">
+                    <div class="col-md-12 px-md-0">
+                        <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+                        </ul>
+                        <main role="main" class="container">
+                            <span>
+                                <a href="" class="mt-4 p-1 text-carrot ml-0"  >
+                                    <i class="fas fa-arrow-left "></i> Home
+                                </a>
+                            </span>
+                        </main>
+                    </div>
+                </div>
+                
+                <!-- dashboard -->
+                <div class="row mt-3 px-4">
+                    <!-- box -->
+                    <div class="col-md-4">
+                        <div class="row box-dashboard px-0 mr-0">
+                            <div class="col-md-4 my-auto">
+                                <img src="./assets/img/earned.PNG" alt="" class="img-fluid rounded-circle" />
+                            </div>
+                            <div class="col-md-8 my-auto ">
+                                <p class="sub-title">Earned</p>
+                                <h2 class="text-white" id="share_receive">0 Carrots</h2>
+                                <a href="#"  class="badge badge-white ">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- box -->
+                    <div class="col-md-4">
+                        <div class="row box-dashboard px-0 mr-0">
+                            <div class="col-md-4 my-auto">
+                                <img src="./assets/img/shared.PNG" alt="" class="img-fluid rounded-circle" />
+                            </div>
+                            <div class="col-md-8 my-auto ">
+                                <p class="sub-title">Shared</p>
+                                <h2 class="text-white" id="share_receive">0 Carrots</h2>
+                                <a href="#"  class="badge badge-white ">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- box -->
+                    <div class="col-md-4">
+                        <div class="row box-dashboard px-0 mr-0">
+                            <div class="col-md-4 my-auto">
+                                <img src="./assets/img/bazaar.PNG" alt="" class="img-fluid rounded-circle" />
+                            </div>
+                            <div class="col-md-8 my-auto ">
+                                <p class="sub-title">Bazaar</p>
+                                <h2 class="text-white" id="share_receive">0 Carrots</h2>
+                                <a href="#"  class="badge badge-white ">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- dashboard -->
+                
+                <!-- history -->
+                <div class="container mt-5">
+                    <h5 class="text-carrot" >
+                        My Histories
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- list item -->
+                            <div class="row mt-1">
+                                <div class="col-12">
+                                    <div class="history-list" >
+                                        <div class="profile text-carrot" >
+                                            <img class="img-from" src="./assets/img/from.PNG" alt="" />
+                                            <i class="fa fa-arrow-right" ></i>
+                                            <img class="img-from" src="./assets/img/to.PNG" alt="" />
+                                        </div>
+                                        <div class="body">
+                                            <div class="title text-carrot">
+                                                Shared
+                                            </div>
+                                            <div class="desc text-carrot">
+                                                Sharing 12 carrots to Sam Dhoe
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list item -->
+                            
+                            <div class="row mt-1">
+                                <div class="col-12">
+                                    <div class="history-list" >
+                                        <div class="profile text-carrot" >
+                                            <img class="img-from" src="./assets/img/from.PNG" alt="" />
+                                            <i class="fa fa-arrow-left" ></i>
+                                            <img class="img-from" src="./assets/img/to.PNG" alt="" />
+                                        </div>
+                                        <div class="body">
+                                            <div class="title text-carrot">
+                                                Earned
+                                            </div>
+                                            <div class="desc text-carrot">
+                                                receive from the manager (John Dhoe) amounting to 12 carrots
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list item -->
+                            
+                            <div class="row mt-1">
+                                <div class="col-12">
+                                    <div class="history-list" >
+                                        <div class="profile text-carrot" >
+                                            <img class="img-from" src="./assets/img/from.PNG" alt="" />
+                                            <i class="fa fa-arrow-right" ></i>
+                                            <img class="img-from" src="./assets/img/to.PNG" alt="" />
+                                        </div>
+                                        <div class="body">
+                                            <div class="title text-carrot">
+                                                Bazaar
+                                            </div>
+                                            <div class="desc text-carrot">
+                                                Spend 12 carrots to buy bicycle
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- list item -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- history -->
+                <br><br><br>
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
